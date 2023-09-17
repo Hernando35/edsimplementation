@@ -13,6 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.servlet.eds.model.ObjectType;
 
+
+
+/**
+ * An abstract servlet implementation handling all the internals of EDS 
+ * processing.
+ * 
+ * @author your name
+ */
 @WebServlet("/my-servlet")
 public class MyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
