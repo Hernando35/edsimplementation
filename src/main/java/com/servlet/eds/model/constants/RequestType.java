@@ -1,7 +1,7 @@
 package com.servlet.eds.model.constants;
 
 // Enum for request types (states)
-enum RequestType {
+public enum RequestType {
     INITIAL_NEW_OBJECT,
     INITIAL_EXISTING_OBJECT,
     IN_PROGRESS_CHANGES,
