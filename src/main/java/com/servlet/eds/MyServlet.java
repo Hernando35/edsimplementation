@@ -13,13 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.servlet.eds.model.ObjectType;
 
-
-
 /**
- * An abstract servlet implementation handling all the internals of EDS 
+ * An abstract servlet implementation handling all the internals of EDS
  * processing.
  * 
- * @author your name
+ * @author
  */
 @WebServlet("/my-servlet")
 public class MyServlet extends HttpServlet {
@@ -39,29 +37,27 @@ public class MyServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		   // Get JSON data from the request body
-	    String json = request.getReader().lines().collect(Collectors.joining());
-	    InheritanceRequest inheritanceRequest = mapper.readValue(json, InheritanceRequest.class);
-	    // Handle inheritance logic here
-	    boolean success = handleInheritance(inheritanceRequest);
-	    // Send a response based on the success
-	    if (success) {
-	        response.setStatus(HttpServletResponse.SC_OK);
-	        response.getWriter().write("Inheritance successful");
-	    } else {
-	        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-	        response.getWriter().write("Inheritance failed");
-	    }
+		// Get JSON data from the request body
+		String json = request.getReader().lines().collect(Collectors.joining());
+		InheritanceRequest inheritanceRequest = mapper.readValue(json, InheritanceRequest.class);
+		// Handle inheritance logic here
+		boolean success = handleInheritance(inheritanceRequest);
+		// Send a response based on the success
+		if (success) {
+			response.setStatus(HttpServletResponse.SC_OK);
+			response.getWriter().write("Inheritance successful");
+		} else {
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			response.getWriter().write("Inheritance failed");
+		}
 	}
 
 	private boolean handleInheritance(InheritanceRequest inheritanceRequest) {
-	    // Perform the inheritance tasks here based on the data in inheritanceRequest
-	    // Return true if successful, false if there was an issue
-	    // You can implement your inheritance logic and return the result accordingly
-	    return true; // Change this based on your logic
+		// Perform the inheritance tasks here based on the data in inheritanceRequest
+		// Return true if successful, false if there was an issue
+		// You can implement your inheritance logic and return the result accordingly
+		return true; // Change this based on your logic
 	}
-
-	
 
 	private ObjectType[] getObjectTypes(String repositoryId) {
 		final String[] objectTypeNames = getObjectTypeNames(repositoryId);
